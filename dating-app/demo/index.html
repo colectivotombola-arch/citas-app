@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Demo — Quedamos Hoy</title>
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: #f7fafc; color: #1a202c; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+      .card { background: white; padding:32px; border-radius:12px; box-shadow: 0 6px 20px rgba(2,6,23,0.08); max-width:720px; text-align:center }
+      h1 { margin:0 0 8px 0; font-size:28px }
+      p { margin:8px 0 16px 0; color:#4a5568 }
+      .actions { display:flex; gap:12px; justify-content:center }
+      a.btn { display:inline-block; padding:10px 16px; border-radius:8px; text-decoration:none; color:white; background:#2563eb }
+      a.btn.secondary { background:#6b7280 }
+      footer { margin-top:16px; font-size:12px; color:#94a3b8 }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Demo — Quedamos Hoy</h1>
+      <p>Esta es una página de demostración estática que muestra el contenido básico de la app sin instalar dependencias.</p>
+      <div class="actions">
+        <a class="btn" href="#" onclick="alert('Aquí iría la demo interactiva si existiera');return false;">Ver demo</a>
+        <a class="btn secondary" href="/" onclick="alert('Navegar al inicio (demo estática)');return false;">Ir al sitio</a>
+      </div>
+      <footer>Para ejecutar la demo localmente: <code>node ./scripts/demo-server.js</code> y abre <strong>http://localhost:3000</strong></footer>
+    </div>
+  </body>
+</html>
