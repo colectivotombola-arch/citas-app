@@ -29,8 +29,10 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
 
 2. **Instalar dependencias**
 
+   Si tu entorno define proxies corporativos que bloquean el registro de npm (403 Forbidden), desactívalos temporalmente para la instalación:
+
    ```bash
-   npm install
+   http_proxy= https_proxy= HTTP_PROXY= HTTPS_PROXY= npm_config_http_proxy= npm_config_https_proxy= npm install
    ```
 
 3. **Crear proyecto en Supabase**
