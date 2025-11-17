@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating App - Modo demo offline</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <h1>Dating App</h1>
+        <p>
+          Bienvenido al modo demo. Esta vista estática permite comprobar que el
+          proyecto puede servir contenido incluso si <code>npm install</code>
+          está bloqueado por el proxy.
+        </p>
+        <div class="cta">
+          <div class="card">
+            <h2>¿Por qué esto funciona?</h2>
+            <ul>
+              <li>Usa solo dependencias nativas de Node.js.</li>
+              <li>No requiere descargar paquetes externos.</li>
+              <li>Se ejecuta con <code>npm run demo</code>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>¿Qué sigue?</h2>
+            <ol>
+              <li>Arranca el servidor demo con <code>npm run demo</code>.</li>
+              <li>Abre <strong>http://localhost:3000</strong> en tu navegador.</li>
+              <li>
+                Cuando el proxy permita salidas al registro de npm, ejecuta el
+                script de instalación habitual para volver al modo completo.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <footer>
+          <p class="note">
+            Si ya puedes instalar dependencias, detén este servidor y usa
+            <code>npm run dev</code> como de costumbre.
+          </p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

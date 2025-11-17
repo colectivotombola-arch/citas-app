@@ -27,11 +27,25 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
    cd quedamos-hoy/dating-app
    ```
 
-2. **Instalar dependencias**
+2. **Ver una demo sin dependencias (opcional)**
+
+   Si tu proxy bloquea el registro de npm, puedes confirmar que el entorno sirve contenido con una página estática que no necesita instalar paquetes:
 
    ```bash
-   npm install
+   npm run demo
    ```
+
+   Abre http://localhost:3000 en tu navegador. Cuando tengas acceso al registro de npm, detén el servidor demo y sigue con la instalación completa.
+
+3. **Instalar dependencias**
+
+   Usa el script incluido para limpiar la configuración de proxies que devuelven 403 y apuntar al registro público de npm con el certificado MITM del entorno (si existe):
+
+   ```bash
+   ./scripts/install-deps.sh
+   ```
+
+   Si necesitas forzar un proxy autenticado, configura previamente `HTTP_PROXY`/`HTTPS_PROXY` y elimina las líneas de borrado de proxy en el script.
 
 3. **Crear proyecto en Supabase**
 
