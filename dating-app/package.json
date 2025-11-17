@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "demo": "node scripts/demo-server.js"
+    "demo": "node scripts/demo-server.js",
+    "serve": "node scripts/serve.js"
   },
   "dependencies": {
     "next": "13.4.19",

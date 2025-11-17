@@ -27,15 +27,17 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
    cd quedamos-hoy/dating-app
    ```
 
-2. **Ver una demo sin dependencias (opcional)**
+2. **Ver la app aunque no puedas instalar dependencias**
 
-   Si tu proxy bloquea el registro de npm, puedes confirmar que el entorno sirve contenido con una página estática que no necesita instalar paquetes:
+   Ejecuta un comando único que elige automáticamente el mejor modo disponible:
 
    ```bash
-   npm run demo
+   npm run serve
    ```
 
-   Abre http://localhost:3000 en tu navegador. Cuando tengas acceso al registro de npm, detén el servidor demo y sigue con la instalación completa.
+   - Si las dependencias están instaladas, abrirá la app normal en http://localhost:3000.
+   - Si el proxy bloquea el registro y no hay dependencias, arrancará el modo demo offline en el mismo puerto para que al menos veas la interfaz.
+   - También puedes abrir `public/demo/index.html` directamente en el navegador sin ningún servidor.
 
 3. **Instalar dependencias**
 
