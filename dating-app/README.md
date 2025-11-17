@@ -1,6 +1,6 @@
 # Quedamos Hoy — Aplicación de citas
 
-Este repositorio contiene una aplicación web de citas construida con **Next.js 13 (App Router)** y **Supabase**. Permite a los usuarios crear perfiles, descubrir personas, dar like o pasar, hacer match, chatear y suscribirse a un plan premium. Incluye un panel de administración para aprobar solicitudes de verificación y un sistema de rewinds diario.
+Este repositorio contiene una aplicación web de citas construida con **Next.js 13 (App Router)** y **Supabase**. Permite a los usuarios crear perfiles, descubrir personas, dar like o pasar, hacer [...] 
 
 ## Características principales
 
@@ -27,15 +27,27 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
    cd quedamos-hoy/dating-app
    ```
 
-2. **Instalar dependencias**
+2. **Ver una demo sin dependencias (opcional)**
 
-   Si tu entorno define proxies corporativos que bloquean el registro de npm (403 Forbidden), desactívalos temporalmente para la instalación:
+   Si tu proxy bloquea el registro de npm, puedes confirmar que el entorno sirve contenido con una página estática que no necesita instalar paquetes:
 
    ```bash
-   http_proxy= https_proxy= HTTP_PROXY= HTTPS_PROXY= npm_config_http_proxy= npm_config_https_proxy= npm install
+   npm run demo
    ```
 
-3. **Crear proyecto en Supabase**
+   Abre http://localhost:3000 en tu navegador. Cuando tengas acceso al registro de npm, detén el servidor demo y sigue con la instalación completa.
+
+3. **Instalar dependencias**
+
+   Usa el script incluido para limpiar la configuración de proxies que devuelven 403 y apuntar al registro público de npm:
+
+   ```bash
+   ./scripts/install-deps.sh
+   ```
+
+   Si necesitas forzar un proxy autenticado, configura previamente `HTTP_PROXY`/`HTTPS_PROXY` y, si es necesario, elimina las líneas de borrado de proxy en el script.
+
+4. **Crear proyecto en Supabase**
 
    - Crea un nuevo proyecto en Supabase.
    - Copia el valor de `Project URL` y la `anon public key`.
@@ -43,7 +55,7 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
    - En la sección **SQL Editor**, ejecuta el contenido de `db/schema.sql` para crear todas las tablas, funciones y políticas.
    - Asegúrate de habilitar el esquema `public` en la sección **Realtime** para la tabla `messages` si deseas chat en tiempo real.
 
-4. **Configurar Stripe**
+5. **Configurar Stripe**
 
    - Crea una cuenta en Stripe (puede ser de test).
    - Crea un producto y un precio recurrente (mensual) en el panel de Stripe y copia el ID del precio (`price_...`).
@@ -58,7 +70,7 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
 
      La CLI mostrará un `Signing secret` (`whsec_...`) que debes configurar como `STRIPE_WEBHOOK_SECRET`.
 
-5. **Variables de entorno**
+6. **Variables de entorno**
 
    Copia `.env.example` a `.env.local` y completa los valores:
 
@@ -73,7 +85,7 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
    ```
 
-6. **Iniciar la aplicación**
+7. **Iniciar la aplicación**
 
    ```bash
    npm run dev
@@ -83,7 +95,7 @@ Este repositorio contiene una aplicación web de citas construida con **Next.js 
 
 ## Uso
 
-- Visita `/login` para iniciar sesión con tu correo electrónico. Recibirás un enlace mágico en tu correo (en modo local, Supabase no envía correos; puedes ir a la consola de Supabase → Auth → Users y crear el usuario manualmente para pruebas).
+- Visita `/login` para iniciar sesión con tu correo electrónico. Recibirás un enlace mágico en tu correo (en modo local, Supabase no envía correos; puedes ir a la consola de Supabase → Auth[...]
 - Completa tu perfil en `/profile`, establece tus preferencias y solicita la verificación si lo deseas.
 - Descubre perfiles en `/dashboard`, da like o pasa. Cuando haya match, podrás chatear desde el aviso que aparece o navegando manualmente a `/chat/[matchId]`.
 - Suscríbete a Premium para obtener rewinds adicionales y ver quién te dio like.
